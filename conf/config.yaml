@@ -1,0 +1,14 @@
+db:
+  driver: mysql
+  addr: root:mysql@tcp(39.105.153.230:3306)/guora?charset=utf8&parseTime=True&loc=Local
+redis:
+  addr: 39.105.153.230:16379
+  password:
+  db: 0
+admin:
+  name: Guora Robot (管理员)
+  mail: chenjia_go@163.com 
+  password: chenjia
+secretkey: JustWriteSomethingWhatYouLike
+lang: en
+address: :8080
