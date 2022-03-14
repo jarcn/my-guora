@@ -10,5 +10,5 @@ admin:
   mail: chenjia_go@163.com 
   password: chenjia
 secretkey: JustWriteSomethingWhatYouLike
-lang: en
+lang: zh
 address: :8080

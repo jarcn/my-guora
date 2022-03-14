@@ -10,7 +10,6 @@
             "request": "launch",
             "mode": "auto",
             "program": "/Users/chenjia/Documents/code/go_code/my-guora/cmd/guora/main.go",
-            "args": ["-init"]
         }
     ]
 }

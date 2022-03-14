@@ -2,14 +2,13 @@ package authorization
 
 import (
 	"my-guora/internal/model"
-	"time"
 
 	"net/url"
 	"strings"
 
 	"my-guora/conf"
 
-	"github.com/dgrijalva/jwt-go"
+	"github.com/dgrijalva/jwt-go/v4"
 )
 
 // Gen Service
@@ -26,8 +25,12 @@ func Gen(user model.User) (tokenString string, err error) {
 		compatibleJSEncodeURIComponent(url.QueryEscape(user.Profile.Name)),
 		compatibleJSEncodeURIComponent(url.QueryEscape(user.Profile.Desc)),
 		jwt.StandardClaims{
-			ExpiresAt: time.Time.AddDate(time.Now(), 0, 0, 7).Unix(),
+			Audience:  []string{},
+			ID:        "",
+			IssuedAt:  &jwt.Time{},
 			Issuer:    "localhost",
+			NotBefore: &jwt.Time{},
+			Subject:   "",
 		},
 	}
 
