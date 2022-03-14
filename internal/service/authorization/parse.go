@@ -22,7 +22,7 @@ func Parse(tokenString string) (ID int, ProfileID int, err error) {
 		ID = claims.ID
 		ProfileID = claims.ProfileID
 	} else {
-		err = errors.New("Token Not Valid")
+		err = errors.New("token illegal")
 	}
 	return
 
