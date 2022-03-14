@@ -1,7 +1,5 @@
 package middleware
 
-// import "fmt"
-
 import (
 	"log"
 	"my-guora/internal/constant"
@@ -36,9 +34,7 @@ func Authorizer() gin.HandlerFunc {
 		c.Set("pid", ProfileID)
 
 		// before request
-
 		c.Next()
-
 		// after request
 
 		log.Print("UID: ", ID)

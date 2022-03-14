@@ -1,7 +1,6 @@
 package main
 
 import (
-	"flag"
 	"my-guora/conf"
 	"my-guora/internal/controller/rest"
 	"my-guora/internal/controller/web"
@@ -104,12 +103,12 @@ func SetupViewRouter(r *gin.Engine) {
 }
 
 func main() {
-	var shouldInit = flag.Bool("init", false, "initialize all")
+	/* var shouldInit = flag.Bool("init", false, "initialize all")
 	flag.Parse()
 
 	if *shouldInit {
 		initAll(conf.Config())
-	}
+	} */
 
 	r := gin.Default()
 	SetupAPIRouter(r)
