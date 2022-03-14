@@ -26,6 +26,7 @@ func Gen(user model.User) (tokenString string, err error) {
 		compatibleJSEncodeURIComponent(url.QueryEscape(user.Profile.Desc)),
 		jwt.StandardClaims{
 			Audience:  []string{},
+			ExpiresAt: &jwt.Time{},
 			ID:        "",
 			IssuedAt:  &jwt.Time{},
 			Issuer:    "localhost",
