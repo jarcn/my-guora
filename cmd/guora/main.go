@@ -26,21 +26,17 @@ func SetupAPIRouter(r *gin.Engine) {
 			GroupWeb.POST("/security/logout", web.SecurityLogout)
 
 			GroupWeb.POST("/question", middleware.Authorizer(), web.CreateQuestion)
-
 			GroupWeb.POST("/answer", middleware.Authorizer(), web.CreateAnswer)
 			GroupWeb.POST("/answer/:id/supporters", middleware.Authorizer(), web.CreateSupporter)
 			GroupWeb.DELETE("/answer/:id/supporters", middleware.Authorizer(), web.DeleteSupporter)
-
 			GroupWeb.POST("/comment", middleware.Authorizer(), web.CreateComment)
-
 			GroupWeb.POST("/reply", middleware.Authorizer(), web.CreateReply)
-
 			GroupWeb.POST("/file/avatar", middleware.Authorizer(), web.FileAvatarResolve)
 		}
 
 		// Group: rest
 		GroupRest := GroupAPI.Group("/rest")
-		GroupRest.Use(middleware.Authorizer())
+		GroupRest.Use(middleware.Authorizer()) //指定所有的rest接口都需要校验token
 		{
 
 			GroupRest.GET("/user/:id", rest.GetUser)
